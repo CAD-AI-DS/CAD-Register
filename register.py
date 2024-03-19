@@ -3,7 +3,7 @@ import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 import pandas as pd 
 
-st.title("CAD Registration form")
+st.title("SISTK Technical club Registration form")
 st.markdown("Enter Your Details Below")
 
 conn = st.connection("gsheets",type=GSheetsConnection)
@@ -21,11 +21,6 @@ with st.form(key="Register-form"):
     Studentname=st.text_input(label="Student Name*",)
     Rollno=st.text_input(label="Rollno*")
     Gender=st.selectbox("Gender",options=GENDER_TYPES,index=None)
-    Dob=st.date_input(label="DOB")
-    cgpa=st.slider("CGPA Obtained",0.0,5.0,10.0)
-    Rollno1=st.text_input(label="10th Rollno*")
-    Rollno2=st.text_input(label="Inter Rollno*")
-    abcid=st.text_input(label="ABC id")
     phno=st.text_input(label="Ph No")
 
     st.markdown("**Required*")
@@ -47,11 +42,6 @@ with st.form(key="Register-form"):
                         "Name":Studentname,
                         "Roll No":Rollno,
                         "Gender":Gender,
-                        "CGPA":cgpa,
-                        "DOB":Dob,
-                        "10th Rollno":Rollno1,
-                        "Inter Rollno":Rollno2,
-                        "ABC Id":abcid,
                         "Ph No":phno,
 
                     }
